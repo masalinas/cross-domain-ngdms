@@ -5,14 +5,16 @@
 
        <script type="text/javascript">
            window.addEventListener('message', (event) => {
+               // origin control
                /*if (!event.origin.includes(window.location.hostname))
                    return;*/
 
+                // parse message
                 var message = JSON.parse(event.data);
 
                 console.log("token is: " + message.token);
 
-                // save the token in cookie
+                // save the message token as cookies
                 document.cookie = "token=" + message.token;               
            }, false);
        </script>
