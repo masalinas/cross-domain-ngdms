@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <meta charset="UTF-8">
+
+       <script type="text/javascript">
+           window.addEventListener('message', (event) => {
+               /*if (!event.origin.includes(window.location.hostname))
+                   return;*/
+
+                var message = JSON.parse(event.data);
+
+                console.log("token is: " + message.token);
+
+                // save the token in cookie
+                document.cookie = "token=" + message.token;               
+           }, false);
+       </script>
+   </head>
+
+   <body></body>
+</html>
